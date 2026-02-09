@@ -8,7 +8,7 @@ const KEY_STYLE = "inline-flex items-center justify-center min-w-[2rem] h-8 px-2
 
 export default function ControlsScreen({ onBack }: ControlsScreenProps) {
   return (
-    <div className="flex flex-col items-center min-h-screen bg-background p-6 md:p-8">
+    <div className="flex flex-col items-center h-dvh overflow-y-auto bg-background p-6 md:p-8">
       <h2 className="text-3xl font-mono font-bold text-foreground mb-8">CONTROLS</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-3xl mb-8">

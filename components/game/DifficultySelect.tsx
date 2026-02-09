@@ -22,7 +22,7 @@ export default function DifficultySelect({ onSelect, onBack }: DifficultySelectP
   const hoveredCampaign = hovered ? CAMPAIGNS[hovered] : null
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-background p-6">
+    <div className="flex flex-col items-center justify-center h-dvh overflow-y-auto bg-background p-6">
       <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground mb-2 tracking-tight">SELECT DIFFICULTY</h2>
       <p className="text-muted-foreground text-sm mb-8 font-mono">ONE RUN. NO RETRIES. CHOOSE WISELY.</p>
 

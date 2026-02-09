@@ -38,9 +38,10 @@ export default function CharacterSelect({ title, subtitle, onSelect, onBack, sho
 
       // Draw stickman preview
       const drawPreview = (char: typeof selectedChar, x: number) => {
-        const breathe = Math.sin(frame * 0.04) * 3
+        const breathe = Math.sin(frame * 0.04) * 2
         ctx.save()
-        ctx.translate(x, 180)
+        ctx.translate(x, 140)
+        ctx.scale(0.85, 0.85)
 
         // Shadow
         ctx.fillStyle = 'rgba(0,0,0,0.3)'
@@ -125,7 +126,7 @@ export default function CharacterSelect({ title, subtitle, onSelect, onBack, sho
         ctx.fillStyle = '#ff4444'
         ctx.font = 'bold 24px monospace'
         ctx.textAlign = 'center'
-        ctx.fillText('VS', 200, 130)
+        ctx.fillText('VS', 200, 100)
       } else {
         drawPreview(selectedChar, 200)
       }
@@ -155,10 +156,10 @@ export default function CharacterSelect({ title, subtitle, onSelect, onBack, sho
   }
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-background p-4 md:p-8">
+    <div className="flex flex-col items-center h-dvh overflow-y-auto bg-background p-4 md:p-6">
       {/* Header */}
-      <div className="text-center mb-6">
-        <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground tracking-tight">{title}</h2>
+      <div className="text-center mb-3 shrink-0">
+        <h2 className="text-2xl md:text-3xl font-mono font-bold text-foreground tracking-tight">{title}</h2>
         {subtitle && <p className="text-muted-foreground text-sm mt-2">{subtitle}</p>}
         {showP2 && (
           <p className="text-primary text-sm mt-1 font-mono">
@@ -168,12 +169,12 @@ export default function CharacterSelect({ title, subtitle, onSelect, onBack, sho
       </div>
 
       {/* Character preview canvas */}
-      <div className="mb-6">
-        <canvas ref={canvasRef} width={showP2 ? 400 : 400} height={220} className="rounded-lg" />
+      <div className="mb-4 shrink-0">
+        <canvas ref={canvasRef} width={showP2 ? 400 : 400} height={160} className="rounded-lg" />
       </div>
 
       {/* Character grid */}
-      <div className="grid grid-cols-5 gap-3 mb-6 w-full max-w-2xl">
+      <div className="grid grid-cols-5 gap-2 mb-4 w-full max-w-2xl shrink-0">
         {CHARACTER_LIST.map(id => {
           const char = PLAYABLE_CHARACTERS[id]
           const isP1 = p1Selected === id
@@ -212,7 +213,7 @@ export default function CharacterSelect({ title, subtitle, onSelect, onBack, sho
       </div>
 
       {/* Selected character info */}
-      <div className="w-full max-w-2xl mb-6 p-4 rounded-lg border border-border bg-card">
+      <div className="w-full max-w-2xl mb-4 p-3 rounded-lg border border-border bg-card">
         <div className="flex items-start justify-between mb-3">
           <div>
             <h3 className="text-xl font-mono font-bold" style={{ color: selectedChar.color }}>
@@ -275,16 +276,16 @@ export default function CharacterSelect({ title, subtitle, onSelect, onBack, sho
       </div>
 
       {/* Action buttons */}
-      <div className="flex gap-3">
+      <div className="flex gap-3 shrink-0 pb-4">
         <button
           onClick={onBack}
-          className="px-6 py-3 border border-border rounded-lg text-muted-foreground font-mono text-sm hover:border-foreground hover:text-foreground transition-all"
+          className="px-5 py-2.5 border border-border rounded-lg text-muted-foreground font-mono text-sm hover:border-foreground hover:text-foreground transition-all"
         >
           BACK
         </button>
         <button
           onClick={handleConfirm}
-          className="px-8 py-3 rounded-lg font-mono text-sm font-bold transition-all hover:scale-105"
+          className="px-6 py-2.5 rounded-lg font-mono text-sm font-bold transition-all hover:scale-105"
           style={{
             backgroundColor: selectedChar.color,
             color: '#000',

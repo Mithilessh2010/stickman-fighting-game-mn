@@ -181,7 +181,7 @@ export default function GameApp() {
     case 'fighting':
       if (engine) {
         return (
-          <div className="flex flex-col h-screen bg-background">
+          <div className="flex flex-col h-dvh bg-background overflow-hidden">
             {/* Pause / back button */}
             <div className="flex items-center justify-between px-3 py-1.5 bg-card/80 border-b border-border">
               <button

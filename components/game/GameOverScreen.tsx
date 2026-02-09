@@ -29,7 +29,7 @@ export default function GameOverScreen({
   const isVictory = result === 'win'
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-background relative overflow-hidden">
+    <div className="flex flex-col items-center justify-center h-dvh bg-background relative overflow-hidden">
       {/* Background effect */}
       <div
         className="absolute inset-0 opacity-10"

@@ -26,7 +26,7 @@ export default function MainMenu({ onSinglePlayer, onMultiplayer, onControls }: 
   const pulse = Math.sin(animFrame * 0.08) * 0.3 + 0.7
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-background relative overflow-hidden">
+    <div className="flex flex-col items-center justify-center h-dvh bg-background relative overflow-hidden">
       {/* Animated background grid */}
       <div className="absolute inset-0 opacity-5">
         <svg width="100%" height="100%" className="absolute inset-0">

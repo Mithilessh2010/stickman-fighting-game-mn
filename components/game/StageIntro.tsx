@@ -30,7 +30,7 @@ export default function StageIntro({
   }, [])
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-background relative overflow-hidden">
+    <div className="flex flex-col items-center justify-center h-dvh bg-background relative overflow-hidden">
       {/* Background effect for boss */}
       {stage.isBoss && (
         <div
