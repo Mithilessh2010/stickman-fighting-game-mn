@@ -1,0 +1,66 @@
+import type { CampaignPath, Difficulty } from './types'
+
+export const CAMPAIGNS: Record<Difficulty, CampaignPath> = {
+  easy: {
+    difficulty: 'easy',
+    description: 'A gentle introduction to combat. Enemies are forgiving but don\'t underestimate the bosses.',
+    stages: [
+      { name: 'Trial of Beginnings', opponent: 'kaito', difficulty: 0.15, isBoss: false, description: 'A sparring partner to test your skills.' },
+      { name: 'Swift Challenge', opponent: 'yuki', difficulty: 0.2, isBoss: false, description: 'A fast opponent challenges your reflexes.' },
+      { name: 'Petal Duel', opponent: 'hana', difficulty: 0.25, isBoss: false, description: 'The chain fighter stands in your way.' },
+      { name: 'Shadow\'s Gate', opponent: 'shadow_lord', difficulty: 0.35, isBoss: true, description: 'BOSS: The Shadow Lord emerges from darkness.' },
+      { name: 'Storm\'s Edge', opponent: 'akira', difficulty: 0.3, isBoss: false, description: 'A weaver of storms blocks your path.' },
+      { name: 'Mountain Pass', opponent: 'gorath', difficulty: 0.35, isBoss: false, description: 'The Iron Mountain refuses to move.' },
+      { name: 'Thunder\'s Domain', opponent: 'thunder_god', difficulty: 0.45, isBoss: true, description: 'BOSS: Raijin descends with fury.' },
+      { name: 'Final Stand', opponent: 'void_emperor', difficulty: 0.5, isBoss: true, description: 'FINAL BOSS: Face the Void Emperor.' },
+    ],
+  },
+  normal: {
+    difficulty: 'normal',
+    description: 'The standard challenge. Enemies fight smart and bosses are relentless.',
+    stages: [
+      { name: 'First Blood', opponent: 'hana', difficulty: 0.3, isBoss: false, description: 'The Crimson Chain opens with ferocity.' },
+      { name: 'Blazing Path', opponent: 'kaito', difficulty: 0.35, isBoss: false, description: 'Fire meets your determination.' },
+      { name: 'Phantom Alley', opponent: 'yuki', difficulty: 0.4, isBoss: false, description: 'Can you keep up with the Phantom Blade?' },
+      { name: 'Dark Descent', opponent: 'shadow_lord', difficulty: 0.55, isBoss: true, description: 'BOSS: The Shadow Lord hungers for your defeat.' },
+      { name: 'Iron Will', opponent: 'gorath', difficulty: 0.45, isBoss: false, description: 'An immovable force blocks the way.' },
+      { name: 'Arcane Trial', opponent: 'akira', difficulty: 0.5, isBoss: false, description: 'The Storm Weaver tests your resolve.' },
+      { name: 'Frozen Flame', opponent: 'kaito', difficulty: 0.55, isBoss: false, description: 'A rematch with burning intensity.' },
+      { name: 'Thunder Summit', opponent: 'thunder_god', difficulty: 0.65, isBoss: true, description: 'BOSS: The Thunder God awaits at the peak.' },
+      { name: 'The Void', opponent: 'void_emperor', difficulty: 0.75, isBoss: true, description: 'FINAL BOSS: The end of everything.' },
+    ],
+  },
+  hard: {
+    difficulty: 'hard',
+    description: 'For seasoned fighters. Every opponent fights near their peak. No mercy.',
+    stages: [
+      { name: 'Gauntlet I', opponent: 'yuki', difficulty: 0.5, isBoss: false, description: 'Speed kills at this level.' },
+      { name: 'Gauntlet II', opponent: 'gorath', difficulty: 0.55, isBoss: false, description: 'Raw power overwhelms the unprepared.' },
+      { name: 'Gauntlet III', opponent: 'akira', difficulty: 0.6, isBoss: false, description: 'Projectile mastery at its finest.' },
+      { name: 'Shadow Abyss', opponent: 'shadow_lord', difficulty: 0.7, isBoss: true, description: 'BOSS: Darkness incarnate.' },
+      { name: 'Gauntlet IV', opponent: 'hana', difficulty: 0.65, isBoss: false, description: 'Endless combos rain upon you.' },
+      { name: 'Gauntlet V', opponent: 'kaito', difficulty: 0.7, isBoss: false, description: 'The balanced fighter at full power.' },
+      { name: 'Gauntlet VI', opponent: 'yuki', difficulty: 0.75, isBoss: false, description: 'The phantom returns, faster than ever.' },
+      { name: 'Divine Storm', opponent: 'thunder_god', difficulty: 0.8, isBoss: true, description: 'BOSS: Wrath of the heavens.' },
+      { name: 'Gauntlet VII', opponent: 'gorath', difficulty: 0.8, isBoss: false, description: 'An unkillable mountain.' },
+      { name: 'Oblivion', opponent: 'void_emperor', difficulty: 0.9, isBoss: true, description: 'FINAL BOSS: Prove your worth against oblivion.' },
+    ],
+  },
+  legendary: {
+    difficulty: 'legendary',
+    description: 'The ultimate test. Perfect play required. One run. No retries. Glory or death.',
+    stages: [
+      { name: 'Hell Gate I', opponent: 'hana', difficulty: 0.7, isBoss: false, description: 'Combo hell begins.' },
+      { name: 'Hell Gate II', opponent: 'yuki', difficulty: 0.75, isBoss: false, description: 'Blink and you\'re dead.' },
+      { name: 'Hell Gate III', opponent: 'kaito', difficulty: 0.75, isBoss: false, description: 'Mastered fundamentals are deadly.' },
+      { name: 'Dark Throne', opponent: 'shadow_lord', difficulty: 0.85, isBoss: true, description: 'BOSS: True darkness.' },
+      { name: 'Hell Gate IV', opponent: 'akira', difficulty: 0.8, isBoss: false, description: 'A storm of projectiles and barriers.' },
+      { name: 'Hell Gate V', opponent: 'gorath', difficulty: 0.85, isBoss: false, description: 'Unstoppable force.' },
+      { name: 'Hell Gate VI', opponent: 'yuki', difficulty: 0.85, isBoss: false, description: 'The phantom at maximum speed.' },
+      { name: 'Hell Gate VII', opponent: 'hana', difficulty: 0.9, isBoss: false, description: 'Infinite combo chains.' },
+      { name: 'Ragnarok', opponent: 'thunder_god', difficulty: 0.92, isBoss: true, description: 'BOSS: The god of thunder, enraged.' },
+      { name: 'Hell Gate VIII', opponent: 'kaito', difficulty: 0.92, isBoss: false, description: 'Perfected flame.' },
+      { name: 'Apocalypse', opponent: 'void_emperor', difficulty: 1.0, isBoss: true, description: 'FINAL BOSS: The absolute end.' },
+    ],
+  },
+}
